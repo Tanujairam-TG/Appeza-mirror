@@ -34,8 +34,8 @@ except Exception as f:
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Repo", "https://www.github.com/Appeza/tg-mirror-leech-bot")
-    buttons.buildbutton("Report Group", "https://t.me/+TWOOFONY5TZAgIgL")
+    buttons.buildbutton("Updates Channel", "https://t.me/REX_BOTZ")
+    buttons.buildbutton("Support Group", "https://t.me/REX_Bots_Support")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -44,7 +44,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
-        sendMarkup('Not Authorized user, deploy your own mirror-leech bot', context.bot, update, reply_markup)
+        sendMarkup('This bot will not work on PM Join [leech group](https://t.me/+XovvU7Ri0p5hMDk1)', context.bot, update, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update)
